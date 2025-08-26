@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Monaspace+Radon:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+/* Code comment style */
+.mtk3 {
+    font-family: 'Monaspace Radon', monospace !important;
+    color: #008c7d !important;
+}
+
+/* Starfield effect for line number space */
+.monaco-editor .line-numbers {
+    display: block !important; /* Ensure the space is present */
+    width: 35px !important;
+    background: #1a1a2e !important; /* Dark space background */
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.monaco-editor .line-numbers::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="100%" viewBox="0 0 35 100%"><circle cx="5" cy="10" r="1" fill="white"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></circle><circle cx="15" cy="30" r="0.5" fill="white"><animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/></circle><circle cx="25" cy="50" r="0.7" fill="white"><animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/></circle></svg>') repeat !important;
+    background-size: 35px 100% !important;
+    animation: starfieldTwinkle 3s infinite ease-in-out !important;
+}
+
+/* Code canvas top shadow */
+.monaco-editor.scroll-decoration {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .75) !important;
+    top: -6px !important;
+}
+
+/* Toolbars when tabs are enabled. */
+.monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions {
+    display: none !important;
+}
+
+/* Side bar */
+.part.sidebar {
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, .25);
+}
+
+/* File Explorer Selected Item */
+.monaco-list.list_id_1 .monaco-list-row.selected {
+    background-color: #4f5971 !important;
+    opacity: 1 !important;
+    border-top: 1px #727b90 solid;
+    border-bottom: 1px #727b90 solid;
+}
+
+/* List item label name */
+.monaco-list.list_id_1 .monaco-list-row.selected .label-name {
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+/* File explorer action buttons */
+.monaco-workbench .part.sidebar .title-actions .actions-container {
+    display: none;
+}
+
+.editor-container {
+    border-top: 40px;
+}
+
+/* File Explorer Item Label */
+.monaco-tree .monaco-tree-row .label-name,
+.monaco-list .monaco-list-row .monaco-icon-label .label-name {
+    font-family: 'Monaspace Radon', monospace !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #FFF !important;
+}
+
+/* Sidebar top shadow */
+.monaco-scrollable-element>.shadow.top {
+    box-shadow: 0px 0px 10px rgba(0,0,0,.75) !important;
+    top: -3px !important;
+}
+
+.split-view-view {
+    position: absolute !important;
+}
+
+/* Sidebar title */
+.composite.title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-items: center !important;
+}
+.composite.title h2 {
+    font-weight: bold !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    color: #bc9abc !important;
+}
+
+.composite.title h2::before {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 1.1rem;
+    content: '🚀';
+}
+
+/* Scroll Bar */
+.slider {
+    position: absolute !important;
+    right: 2px !important;
+    width: 2px !important;
+    background: #bc9abc !important;
+    left: auto !important;
+}
+
+.codicon-toolbar-more, .codicon-word-wrap {
+    display: block !important;
+}
+
+/* Tooltip box style */
+.monaco-editor-hover,
+.monaco-hover {
+    padding: 10px !important;
+    background-image: linear-gradient(#3c3c50 0%, #2a2b38 100%) !important;
+    backdrop-filter: blur(3px) !important;
+    border-radius: 10px !important;
+    border: 3px rgba(255,0,0,.45) !important;
+}
+
+/* Project title's style at the top. */
+.monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Project Title */
+.titlebar-left {
+    justify-content: flex-start !important;
+    flex-grow: 0 !important;
+    width: auto !important;
+}
+
+/* Search Label or file name */
+.search-label {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 14px !important;
+    color: #fff;
+    display: block;
+    padding-left: 50px !important;
+}
+
+/* Search icon */
+.search-icon {
+    display: none !important;
+}
+
+.codicon-search::before {
+    display: none !important;
+}
+
+.codicon-arrow-right, .codicon-arrow-left {
+    display: none !important;
+}
+
+.titlebar-right > * {
+    display: none !important;
+}
+
+/* Command Palette */
+.quick-input-widget {
+    transform: translateY(-50%) !important;
+    top: 65% !important;
+    padding: 10px 10px 18px 10px !important;
+    background: rgba(0,0,0,0.2) !important;
+    backdrop-filter: blur(24px) !important;
+    border-radius: 6px !important;
+}
+
+/* Remove background for lists */
+.monaco-list-rows {
+    background: transparent !important;
+}
+
+/* List hover */
+.monaco-list-row:hover {
+    background: rgba(0, 0, 0, .2) !important;
+}
+
+.notifications-toasts .monaco-list-row:hover {
+    min-width: none !important;
+}
+
+.monaco-list-row.focused {
+    background-color: rgb(181 198 228 / 5%) !important;
+}
+
+/* Command palette text input */
+.quick-input-filter .monaco-inputbox {
+    border-radius: 8px !important;
+    padding: 8px !important;
+    border: none !important;
+    background-color: rgba(234, 83, 74, 0.1) !important;
+    font-family: 'Monaspace Radon', monospace !important;
+    font-family: "Geist Mono" !important;
+    font-size: 14px !important;
+    margin-bottom: 16px !important;
+    font-optical-sizing: auto !important;
+    font-style: normal !important;
+}
+
+#command-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .15);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px);
+}
+
+/* Container that holds the VS Code home icon. */
+.editor-group-watermark {
+    max-width: none !important;
+}
+
+.command-center-center {
+    width: auto !important;
+}
+
+.letterpress {
+    background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="utf-8"%3F><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M754.06 474c-0.93 24.79-6.58 59.51-13.41 81.13 0 0-67.84 272.5-268.15 272.5-205.1 0.03-288.5-273.12-288.5-273.12-9.08-23.19-15.75-62.37-15.75-87.24V230.81a22.61 22.61 0 0 1 22.61-22.61h297.4z" fill="%23FFFFFF" /><path d="M740.65 555.16s-152.07 272.5-268.15 272.5-187.08-273.15-187.08-273.15c-9.08-23.19-15.75-62.37-15.75-87.24V230.81a22.61 22.61 0 0 1 22.61-22.61h196a226.19 226.19 0 0 0-4.51 45.05c0 124.41 100.9 225.26 225.36 225.26a226.49 226.49 0 0 0 44.93-4.51c-0.92 24.82-6.57 59.54-13.41 81.16z" fill="%23E7D8FF" /><path d="M432.19 817.23q114.48-132 108.19-343.79-1.05-35.47-1.86-73A225.83 225.83 0 0 0 754.06 474c-0.93 24.79-6.58 59.51-13.41 81.13 0 0-95.5 272.5-268.15 272.5-13.64 0.03-27.13-3.74-40.31-10.4z" fill="%23C15BFF" /><path d="M147.79 467.27V230.81a43.09 43.09 0 0 1 43.09-43.09h297.4v41h-297.4a2.13 2.13 0 0 0-2.13 2.13v236.42c0 23.19 6.47 59.7 14.33 79.77 1.08 3.32 2.3 7 4.19 12.29 3.21 9 7.14 19 11.79 29.77a542.77 542.77 0 0 0 49.22 90.47c54.66 80.3 122.4 127.62 204.23 127.62 79.35 0 142.63-46.82 191.76-126.52a512.24 512.24 0 0 0 43.46-90.06c4-10.76 7.33-20.73 10-29.65 1.59-5.26 2.59-8.93 3-10.75 6.54-20.83 11.95-53.69 12.82-76.95l40.93 1.53c-1 26.58-6.91 62.69-14.16 85.94-0.64 2.52-1.77 6.6-3.41 12-2.93 9.71-6.53 20.5-10.83 32.09a552.58 552.58 0 0 1-47 97.29c-55.86 90.61-130.7 146-226.63 146-97.59 0.03-176.45-55.11-238.03-145.5a583.15 583.15 0 0 1-53-97.33c-5-11.61-9.23-22.4-12.72-32.12-1.92-5.35-3.27-9.38-4.06-11.91-9.64-25.06-16.85-66.1-16.85-93.98z" fill="" /><path d="M461.23 827.66h33.8v157.68h-33.8z" fill="%23E7D8FF" /><path d="M520.38 1000.84H407.74V806.27h112.64z m-71.68-41h30.72V847.23H448.7z" fill="" /><path d="M305.34 970.12h337.92a20.48 20.48 0 0 1 20.48 20.48 20.48 20.48 0 0 1-20.48 20.48H305.34a20.48 20.48 0 0 1-20.48-20.48 20.48 20.48 0 0 1 20.48-20.48zM448.7 612.73a52.23 52.23 0 1 1 52.22-52.23 52.28 52.28 0 0 1-52.22 52.23z m0-81.92a29.7 29.7 0 1 0 29.7 29.7 29.73 29.73 0 0 0-29.7-29.71zM450 681.25a22.53 22.53 0 1 1 22.53-22.53A22.55 22.55 0 0 1 450 681.25z m0-22.53zM450 771.35a22.53 22.53 0 1 1 22.53-22.53A22.55 22.55 0 0 1 450 771.35z m0-22.53z" fill="" /><path d="M706.11 478.5c-89.87-29.62-154.73-114.22-154.73-214 0-124.41 100.9-225.26 225.36-225.26h3c89.87 29.62 154.73 114.22 154.73 214 0 124.41-100.9 225.26-225.36 225.26z" fill="%23D1FF02" /><path d="M709.13 501A247.76 247.76 0 0 1 533.85 78 247.84 247.84 0 1 1 884.4 428.47 246.32 246.32 0 0 1 709.13 501z m0-450.51c-111.84 0-202.83 90.94-202.83 202.73S597.29 456 709.13 456 912 365 912 253.26 821 50.53 709.13 50.53z" fill="" /><path d="M696.33 227.9l-40.69-125.2 18.44-5.98 40.68 125.19 40.71-125.2 18.43 5.98-40.7 125.2 106.55-77.38 11.39 15.67-106.55 77.39 131.69-0.01v19.37l-131.69 0.01 106.53 77.37-11.39 15.67-106.54-77.36 40.69 125.19-18.44 5.99-40.68-125.19-40.71 125.2-18.43-5.99 40.7-125.2-106.55 77.39-11.39-15.68 106.55-77.38-131.69 0.01v-19.37l131.69-0.02-106.53-77.36 11.39-15.68 106.54 77.37z" fill="" /></svg>') !important;
+    background-repeat: no-repeat no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    width: 40% !important;
+}
+
+.sticky-widget {
+    padding: 2px !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 0 !important;
+    font-family: 'Fira Code', monospace !important;
+}
+
+.sticky-line-number-inner {
+    display: none !important;
+}
+
+/* Interactive 3D Sidebar */
+.part.sidebar {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.part.sidebar:hover {
+    transform: perspective(500px) rotateY(5deg);
+}
+
+/* Keyframes for animations */
+@keyframes starfieldTwinkle {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 5px #00ffcc;
+        background-color: rgba(0, 255, 204, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc;
+        background-color: rgba(0, 255, 204, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 5px #00ffcc;
+        background-color: rgba(0, 255, 204, 0.1);
+    }
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 5px transparent;
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 15px #00ffcc;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(8px);
+    }
+}
+
+/* Current line with neon effect */
+.monaco-editor .current-line,
+.view-line.current-line {
+    position: relative !important;
+    animation: neonPulse 2s infinite ease-in-out !important;
+    z-index: 1 !important;
+}
+
+/* Button hover animations */
+button:hover,
+.monaco-button:hover,
+.codicon:hover,
+.action-item:hover,
+.hover-glow {
+    animation: buttonGlow 0.3s ease-out forwards !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Command blur animation */
+#command-blur {
+    animation: fadeInBlur 0.3s ease-out !important;
+}
