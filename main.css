@@ -334,14 +334,231 @@
 }
 
 /* Current line with neon effect */
+
+/* Quantum energy current line indicator */
 .monaco-editor .current-line,
 .view-line.current-line {
     position: relative !important;
-    animation: neonPulse 2s infinite ease-in-out !important;
     z-index: 1 !important;
 }
 
-/* Button hover animations */
+.monaco-editor .current-line::before,
+.view-line.current-line::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 35px;
+    background:
+        linear-gradient(135deg,
+            rgba(120, 119, 198, 0.4) 0%,
+            rgba(255, 159, 67, 0.3) 30%,
+            rgba(74, 144, 226, 0.4) 60%,
+            rgba(162, 155, 254, 0.3) 100%);
+    border-left: 2px solid rgba(120, 119, 198, 0.6);
+    border-radius: 0 4px 4px 0;
+    box-shadow:
+        0 0 12px 1px rgba(120, 119, 198, 0.3),
+        0 0 24px 2px rgba(255, 159, 67, 0.2);
+    opacity: 0.85;
+    animation:
+        elegantFlow 3.5s infinite ease-in-out,
+        subtleGlow 2s infinite ease-in-out alternate;
+    transition: all 0.3s ease;
+    z-index: 5 !important;
+}
+/* (fixed block above) */
+.monaco-editor .current-line::after,
+.view-line.current-line::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 25%;
+    height: 50%;
+    width: 31px;
+    background: linear-gradient(90deg,
+        rgba(120, 119, 198, 0.1) 0%,
+        rgba(255, 159, 67, 0.15) 50%,
+        rgba(74, 144, 226, 0.1) 100%);
+    border-radius: 0 6px 6px 0;
+    animation: innerShimmer 4s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes elegantFlow {
+    0% {
+        transform: translateX(0) scaleY(1);
+        border-left-color: rgba(120, 119, 198, 0.6);
+        background: linear-gradient(135deg,
+            rgba(120, 119, 198, 0.4) 0%,
+            rgba(255, 159, 67, 0.3) 30%,
+            rgba(74, 144, 226, 0.4) 60%,
+            rgba(162, 155, 254, 0.3) 100%);
+    }
+    50% {
+        transform: translateX(1px) scaleY(1.02);
+        border-left-color: rgba(255, 159, 67, 0.7);
+        background: linear-gradient(135deg,
+            rgba(255, 159, 67, 0.4) 0%,
+            rgba(74, 144, 226, 0.3) 30%,
+            rgba(162, 155, 254, 0.4) 60%,
+            rgba(120, 119, 198, 0.3) 100%);
+    }
+    100% {
+        transform: translateX(0) scaleY(1);
+        border-left-color: rgba(120, 119, 198, 0.6);
+        background: linear-gradient(135deg,
+            rgba(120, 119, 198, 0.4) 0%,
+            rgba(255, 159, 67, 0.3) 30%,
+            rgba(74, 144, 226, 0.4) 60%,
+            rgba(162, 155, 254, 0.3) 100%);
+    }
+}
+
+@keyframes subtleGlow {
+    0% {
+        box-shadow:
+            0 0 8px 1px rgba(120, 119, 198, 0.2),
+            0 0 16px 2px rgba(255, 159, 67, 0.15);
+    }
+    100% {
+        box-shadow:
+            0 0 16px 2px rgba(120, 119, 198, 0.4),
+            0 0 32px 4px rgba(255, 159, 67, 0.25);
+    }
+}
+
+@keyframes innerShimmer {
+    0% {
+        opacity: 0.3;
+        transform: scaleX(0.9);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scaleX(1.1);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scaleX(0.9);
+    }
+}
+
+@keyframes intensePulse {
+    0% {
+        box-shadow:
+            inset 0 0 8px rgba(0, 255, 127, 0.4),
+            inset 0 0 16px rgba(255, 20, 147, 0.3),
+            0 0 20px 2px rgba(0, 255, 127, 0.6),
+            0 0 40px 4px rgba(255, 20, 147, 0.4),
+            0 0 60px 6px rgba(0, 191, 255, 0.3);
+    }
+    50% {
+        box-shadow:
+            inset 0 0 15px rgba(0, 255, 127, 0.7),
+            inset 0 0 30px rgba(255, 20, 147, 0.6),
+            0 0 35px 5px rgba(0, 255, 127, 0.9),
+            0 0 70px 10px rgba(255, 20, 147, 0.7),
+            0 0 105px 15px rgba(0, 191, 255, 0.5);
+    }
+    100% {
+        box-shadow:
+            inset 0 0 20px rgba(0, 255, 127, 0.8),
+            inset 0 0 40px rgba(255, 20, 147, 0.7),
+            0 0 45px 8px rgba(0, 255, 127, 1.0),
+            0 0 90px 16px rgba(255, 20, 147, 0.8),
+            0 0 135px 24px rgba(0, 191, 255, 0.6);
+    }
+}
+
+@keyframes cosmicShift {
+    0% {
+        background-position: 0% 0%, 100% 100%, 50% 0%, 0% 50%, 25% 75%;
+    }
+    25% {
+        background-position: 25% 25%, 75% 75%, 100% 25%, 25% 100%, 50% 50%;
+    }
+    50% {
+        background-position: 50% 50%, 50% 50%, 75% 50%, 50% 75%, 75% 25%;
+    }
+    75% {
+        background-position: 75% 75%, 25% 25%, 25% 75%, 75% 25%, 100% 0%;
+    }
+    100% {
+        background-position: 100% 100%, 0% 0%, 0% 100%, 100% 0%, 0% 50%;
+    }
+}
+
+@keyframes dimensionalWarp {
+    0% {
+        backdrop-filter: blur(2px) brightness(1.3) saturate(1.2);
+        opacity: 0.96;
+    }
+    25% {
+        backdrop-filter: blur(3px) brightness(1.5) saturate(1.6) hue-rotate(90deg);
+        opacity: 0.98;
+    }
+    50% {
+        backdrop-filter: blur(1px) brightness(1.2) saturate(1.8) hue-rotate(180deg);
+        opacity: 0.94;
+    }
+    75% {
+        backdrop-filter: blur(4px) brightness(1.6) saturate(1.4) hue-rotate(270deg);
+        opacity: 0.99;
+    }
+    100% {
+        backdrop-filter: blur(2px) brightness(1.3) saturate(1.2) hue-rotate(360deg);
+        opacity: 0.96;
+    }
+}
+
+@keyframes hyperInnerGlow {
+    0% {
+        opacity: 0.4;
+        transform: scaleX(0.7) translateX(-2px) rotateZ(0deg);
+        background: linear-gradient(90deg,
+            rgba(0, 255, 127, 0.15) 0%,
+            rgba(255, 20, 147, 0.2) 25%,
+            rgba(0, 191, 255, 0.18) 50%,
+            rgba(255, 69, 0, 0.15) 75%,
+            rgba(138, 43, 226, 0.1) 100%);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1.2) translateX(3px) rotateZ(2deg);
+        background: linear-gradient(90deg,
+            rgba(0, 255, 127, 0.3) 0%,
+            rgba(255, 20, 147, 0.4) 25%,
+            rgba(0, 191, 255, 0.35) 50%,
+            rgba(255, 69, 0, 0.3) 75%,
+            rgba(138, 43, 226, 0.25) 100%);
+    }
+    100% {
+        opacity: 0.9;
+        transform: scaleX(1.1) translateX(2px) rotateZ(-1deg);
+        background: linear-gradient(90deg,
+            rgba(0, 255, 127, 0.35) 0%,
+            rgba(255, 20, 147, 0.45) 25%,
+            rgba(0, 191, 255, 0.4) 50%,
+            rgba(255, 69, 0, 0.35) 75%,
+            rgba(138, 43, 226, 0.3) 100%);
+    }
+}
+
+@keyframes plasmaWave {
+    0% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(360deg);
+    }
+}/* Button hover animations */
 button:hover,
 .monaco-button:hover,
 .codicon:hover,
