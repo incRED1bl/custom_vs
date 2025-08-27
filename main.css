@@ -9,8 +9,48 @@
     color: #008c7d !important;
 }
 
-/* Starfield effect for line number space */
-.monaco-editor .line-numbers {
+/* Starfield effect for line num/* Enhanced Terminal with Cosmic Theme */
+.terminal,
+.terminal-wrapper,
+.monaco-workbench .part.panel .content .monaco-pane-view .pane .monaco-scrollable-element,
+.integrated-terminal,
+.terminal-outer-container,
+.xterm {
+    background: linear-gradient(135deg,
+        rgba(20, 20, 40, 0.95) 0%,
+        rgba(35, 20, 50, 0.98) 50%,
+        rgba(20, 30, 45, 0.95) 100%) !important;
+    border-top: 2px solid rgba(255, 107, 157, 0.7) !important;
+    border-radius: 8px 8px 0 0 !important;
+    box-shadow:
+        0 -5px 20px rgba(0, 0, 0, 0.5),
+        0 -2px 10px rgba(255, 107, 157, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Panel container for terminal */
+.monaco-workbench .part.panel {
+    background: linear-gradient(135deg,
+        rgba(20, 20, 40, 0.95) 0%,
+        rgba(35, 20, 50, 0.98) 50%,
+        rgba(20, 30, 45, 0.95) 100%) !important;
+    border-top: 2px solid rgba(255, 107, 157, 0.7) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Panel container for terminal */
+.monaco-workbench .part.panel {
+    background: linear-gradient(135deg,
+        rgba(26, 26, 46, 0.95) 0%,
+        rgba(40, 44, 52, 0.98) 50%,
+        rgba(26, 26, 46, 0.95) 100%) !important;
+    border-top: 2px solid rgba(120, 119, 198, 0.6) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}onaco-editor .line-numbers {
     display: block !important; /* Ensure the space is present */
     width: 27px !important;
     background: #1a1a2e !important; /* Dark space background */
@@ -558,7 +598,325 @@
         background-position: 0% 50%;
         filter: hue-rotate(360deg);
     }
-}/* Button hover animations */
+}
+
+/* Enhanced Terminal with Cosmic Theme */
+.terminal,
+.terminal-wrapper,
+.monaco-workbench .part.panel,
+.integrated-terminal,
+.terminal-outer-container,
+.xterm {
+    background: linear-gradient(135deg,
+        rgba(20, 20, 40, 0.95) 0%,
+        rgba(35, 20, 50, 0.98) 50%,
+        rgba(20, 30, 45, 0.95) 100%) !important;
+    border-top: 2px solid rgba(255, 107, 157, 0.7) !important;
+    border-radius: 8px 8px 0 0 !important;
+    box-shadow:
+        0 -5px 20px rgba(0, 0, 0, 0.5),
+        0 -2px 10px rgba(255, 107, 157, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Enhanced Terminal Pulse Animation */
+.terminal::before,
+.monaco-workbench .part.panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(78, 205, 196, 0.4) 15%,
+        rgba(78, 205, 196, 1) 50%,
+        rgba(78, 205, 196, 0.4) 85%,
+        transparent 100%);
+    animation: elegantPulse 2s ease-in-out infinite;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+/* Enhanced Energy Field Background */
+.terminal::after,
+.monaco-workbench .part.panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(78, 205, 196, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 157, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 40% 80%, rgba(78, 205, 196, 0.10) 0%, transparent 30%);
+    opacity: 0.8;
+    pointer-events: none;
+    animation: subtleEnergyFlow 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.xterm-screen {
+    background: transparent !important;
+    position: relative !important;
+}
+
+.xterm-viewport {
+    background: transparent !important;
+}
+
+/* Terminal tab styling */
+.terminal-tab,
+.monaco-workbench .part.panel .composite.title,
+.monaco-workbench .part.panel .title-actions,
+.tab,
+.terminal-tab-container {
+    background: linear-gradient(135deg,
+        rgba(20, 20, 40, 0.9) 0%,
+        rgba(35, 20, 50, 0.95) 100%) !important;
+    border: 1px solid rgba(255, 107, 157, 0.4) !important;
+    border-radius: 8px 8px 0 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.terminal-tab:hover,
+.monaco-workbench .part.panel .composite.title:hover {
+    background: linear-gradient(135deg,
+        rgba(255, 107, 157, 0.2) 0%,
+        rgba(78, 205, 196, 0.1) 100%) !important;
+    border-color: rgba(255, 107, 157, 0.7) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4) !important;
+}
+
+.terminal-tab.active,
+.monaco-workbench .part.panel .composite.title.active {
+    background: linear-gradient(135deg,
+        rgba(255, 107, 157, 0.3) 0%,
+        rgba(78, 205, 196, 0.2) 100%) !important;
+    border-color: rgba(255, 107, 157, 0.8) !important;
+    box-shadow: 0 0 15px rgba(255, 107, 157, 0.5) !important;
+}
+
+/* Terminal text cursor */
+.xterm-cursor-layer .xterm-cursor,
+.xterm .xterm-cursor {
+    background: rgba(255, 107, 157, 0.9) !important;
+    box-shadow: 0 0 12px rgba(255, 107, 157, 0.7) !important;
+    animation: terminalCursorPulse 1.2s ease-in-out infinite !important;
+}
+
+/* Add blinking effect to cursor */
+.xterm-cursor-blink {
+    background: rgba(255, 107, 157, 1) !important;
+    box-shadow: 0 0 15px rgba(255, 107, 157, 0.9) !important;
+    animation: terminalCursorBlink 1s ease-in-out infinite !important;
+}
+
+/* Terminal scrollbar */
+.terminal .monaco-scrollable-element .slider,
+.monaco-workbench .part.panel .monaco-scrollable-element .slider {
+    background: linear-gradient(180deg,
+        rgba(255, 107, 157, 0.7) 0%,
+        rgba(78, 205, 196, 0.5) 100%) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 0 8px rgba(255, 107, 157, 0.4) !important;
+    width: 8px !important;
+}
+
+.terminal .monaco-scrollable-element .slider:hover,
+.monaco-workbench .part.panel .monaco-scrollable-element .slider:hover {
+    background: linear-gradient(180deg,
+        rgba(255, 107, 157, 0.9) 0%,
+        rgba(78, 205, 196, 0.7) 100%) !important;
+    box-shadow: 0 0 15px rgba(255, 107, 157, 0.6) !important;
+    animation: scrollbarGlow 0.3s ease-out forwards !important;
+}
+
+/* Terminal animations */
+@keyframes terminalScan {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+        width: 20%;
+    }
+    10% {
+        opacity: 0.7;
+        width: 30%;
+    }
+    50% {
+        opacity: 1;
+        width: 40%;
+        transform: translateX(50%);
+    }
+    90% {
+        opacity: 0.7;
+        width: 30%;
+    }
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+        width: 20%;
+    }
+}
+
+/* Terminal animations */
+@keyframes terminalScan {
+    0% {
+        transform: translateX(-150%);
+        opacity: 0;
+        width: 30%;
+    }
+    20% {
+        opacity: 0.8;
+        width: 40%;
+    }
+    50% {
+        opacity: 1;
+        width: 50%;
+        transform: translateX(25%);
+    }
+    80% {
+        opacity: 0.8;
+        width: 40%;
+    }
+    100% {
+        transform: translateX(250%);
+        opacity: 0;
+        width: 30%;
+    }
+}
+
+@keyframes geometricFloat {
+    0% {
+        background-position: 0% 0%;
+        transform: translateY(0);
+    }
+    25% {
+        background-position: 25% 25%;
+        transform: translateY(-10px);
+    }
+    50% {
+        background-position: 50% 50%;
+        transform: translateY(0);
+    }
+    75% {
+        background-position: 75% 25%;
+        transform: translateY(10px);
+    }
+    100% {
+        background-position: 100% 0%;
+        transform: translateY(0);
+    }
+}
+
+@keyframes terminalCursorPulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(255, 107, 157, 0.7);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+        box-shadow: 0 0 20px rgba(255, 107, 157, 0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(255, 107, 157, 0.7);
+    }
+}
+
+@keyframes terminalCursorBlink {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(255, 107, 157, 0.9);
+    }
+    50% {
+        opacity: 0.4;
+        box-shadow: 0 0 8px rgba(255, 107, 157, 0.5);
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(255, 107, 157, 0.9);
+    }
+}
+
+@keyframes scrollbarGlow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 8px rgba(255, 107, 157, 0.4);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 18px rgba(255, 107, 157, 0.8);
+    }
+}
+
+/* Enhanced Terminal Animation Keyframes */
+@keyframes elegantPulse {
+    0% {
+        opacity: 0.4;
+        transform: scaleX(0.7);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scaleX(0.7);
+    }
+}
+
+@keyframes subtleEnergyFlow {
+    0% {
+        background-position: 0% 0%, 100% 100%, 50% 0%;
+        opacity: 0.6;
+    }
+    33% {
+        background-position: 30% 30%, 70% 70%, 80% 20%;
+        opacity: 0.8;
+    }
+    66% {
+        background-position: 70% 10%, 30% 90%, 20% 80%;
+        opacity: 0.7;
+    }
+    100% {
+        background-position: 0% 0%, 100% 100%, 50% 0%;
+        opacity: 0.6;
+    }
+}
+
+@keyframes geometricFloat {
+    0% {
+        background-position: 0% 0%;
+        transform: translateY(0);
+    }
+    25% {
+        background-position: 25% 25%;
+        transform: translateY(-10px);
+    }
+    50% {
+        background-position: 50% 50%;
+        transform: translateY(0);
+    }
+    75% {
+        background-position: 75% 25%;
+        transform: translateY(10px);
+    }
+    100% {
+        background-position: 100% 0%;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover animations */
 button:hover,
 .monaco-button:hover,
 .codicon:hover,
