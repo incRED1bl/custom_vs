@@ -198,28 +198,175 @@
     border: 3px rgba(255,0,0,.45) !important;
 }
 
+/* Van Gogh Style Top Panel (Titlebar) */
+.monaco-workbench .part.titlebar,
+.titlebar-container,
+.window-title {
+    background: linear-gradient(135deg,
+        rgba(22, 36, 71, 0.98) 0%,
+        rgba(41, 50, 113, 0.95) 15%,
+        rgba(30, 39, 89, 0.97) 30%,
+        rgba(22, 36, 71, 0.99) 45%,
+        rgba(16, 24, 47, 0.96) 60%,
+        rgba(41, 50, 113, 0.98) 75%,
+        rgba(30, 39, 89, 0.95) 90%,
+        rgba(22, 36, 71, 0.97) 100%) !important;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.6) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(8px) !important;
+    animation: vanGoghTitlebarFlow 6s infinite ease-in-out !important;
+}
+
+.monaco-workbench .part.titlebar::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><defs><radialGradient id="vanGoghStar1" cx="20%" cy="30%" r="15%"><stop offset="0%" style="stop-color:%23FFD700;stop-opacity:0.8"><animate attributeName="stop-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/></stop><stop offset="100%" style="stop-color:%23FFA500;stop-opacity:0"/></radialGradient><radialGradient id="vanGoghStar2" cx="80%" cy="70%" r="12%"><stop offset="0%" style="stop-color:%23FFCC00;stop-opacity:0.7"><animate attributeName="stop-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="0.8s"/></stop><stop offset="100%" style="stop-color:%23FF8C00;stop-opacity:0"/></radialGradient><linearGradient id="vanGoghBrushStroke" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23293271;stop-opacity:0.3"/><stop offset="30%" style="stop-color:%23FFD700;stop-opacity:0.2"/><stop offset="70%" style="stop-color:%23487eb0;stop-opacity:0.25"/><stop offset="100%" style="stop-color:%23162447;stop-opacity:0.3"/></linearGradient></defs><circle cx="20" cy="25" r="8" fill="url(%23vanGoghStar1)"><animate attributeName="r" values="6;12;6" dur="4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" values="0 20 25;360 20 25" dur="20s" repeatCount="indefinite"/></circle><circle cx="75" cy="65" r="6" fill="url(%23vanGoghStar2)"><animate attributeName="r" values="4;9;4" dur="3.5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" values="360 75 65;0 75 65" dur="15s" repeatCount="indefinite"/></circle><path d="M0 15 Q25 10 50 20 Q75 30 100 15 L100 25 Q75 35 50 25 Q25 15 0 20 Z" fill="url(%23vanGoghBrushStroke)" opacity="0.6"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;5,-2;0,0" dur="8s" repeatCount="indefinite"/></path><ellipse cx="60" cy="45" rx="15" ry="8" fill="%23FFD700" opacity="0.15"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="6s" repeatCount="indefinite" begin="1s"/><animateTransform attributeName="transform" type="rotate" values="0 60 45;180 60 45;0 60 45" dur="12s" repeatCount="indefinite"/></ellipse></svg>') !important;
+    background-size: 200% 100% !important;
+    background-repeat: repeat-x !important;
+    animation: vanGoghStarfield 10s infinite linear !important;
+    z-index: 1 !important;
+    opacity: 0.7 !important;
+}
+
+.monaco-workbench .part.titlebar::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 215, 0, 0.4) 15%,
+        rgba(255, 204, 0, 0.8) 30%,
+        rgba(255, 215, 0, 1) 50%,
+        rgba(255, 204, 0, 0.8) 70%,
+        rgba(255, 215, 0, 0.4) 85%,
+        transparent 100%) !important;
+    animation: vanGoghGoldenLine 3s infinite ease-in-out !important;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6) !important;
+    z-index: 2 !important;
+}
+
 /* Project title's style at the top. */
 .monaco-workbench .part.titlebar>.titlebar-container>.titlebar-center>.window-title>.command-center .action-item.command-center-center {
     border: none !important;
     background: transparent !important;
+    color: #FFD700 !important;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8) !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* Project Title */
+/* Van Gogh Style Project Title */
 .titlebar-left {
     justify-content: flex-start !important;
-
-
     flex-grow: 0 !important;
     width: auto !important;
+    color: #FFD700 !important;
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 600 !important;
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.8),
+        0 0 16px rgba(255, 204, 0, 0.6) !important;
+    animation: vanGoghTitleGlow 4s infinite ease-in-out !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* Search Label or file name */
+.titlebar-left * {
+    color: #FFD700 !important;
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.8),
+        0 0 16px rgba(255, 204, 0, 0.6) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Global Anti-Underline Rules for Van Gogh Theme */
+.monaco-workbench .part.titlebar *,
+.search-label,
+.search-label *,
+.window-title *,
+.command-center *,
+.titlebar-left *,
+.titlebar-center *,
+.action-item * {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    text-decoration-line: none !important;
+    text-decoration-style: none !important;
+    text-decoration-color: transparent !important;
+}
+
+/* Van Gogh Style Search Label */
+.search-label,
+.search-label *,
+.search-label::before,
+.search-label::after {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
 .search-label {
     font-family: 'Fira Code', monospace !important;
-    font-size: 14px !important;
-    color: #fff;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FFD700 !important; /* Van Gogh golden yellow */
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.8),
+        0 0 16px rgba(255, 204, 0, 0.6),
+        0 0 24px rgba(255, 140, 0, 0.4) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
     display: block;
-    padding-left: 50px !important;
+    padding: 2px 12px 20px 45px !important;
+    margin-left: 35px !important;
+    background: linear-gradient(135deg,
+        rgba(41, 50, 113, 0.9) 0%,
+        rgba(22, 36, 71, 0.95) 25%,
+        rgba(30, 39, 89, 0.9) 50%,
+        rgba(41, 50, 113, 0.95) 75%,
+        rgba(22, 36, 71, 0.9) 100%) !important;
+    border-radius: 20px 8px 8px 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    animation: vanGoghLabelGlow 2.5s infinite ease-in-out,
+               vanGoghLabelFloat 3.5s infinite ease-in-out !important;
+    transition: all 0.3s ease !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+}.search-label::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 20px !important;
+    width: calc(100% - 20px) !important;
+    height: 100% !important;
+    background: linear-gradient(45deg,
+        rgba(255, 215, 0, 0.15) 0%,
+        rgba(255, 204, 0, 0.25) 25%,
+        rgba(244, 157, 66, 0.2) 50%,
+        rgba(255, 140, 0, 0.18) 75%,
+        rgba(255, 215, 0, 0.12) 100%) !important;
+    animation: vanGoghShimmer 2s infinite ease-in-out !important;
+    z-index: 1 !important;
+}
+
+.search-label:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow:
+        0 4px 20px rgba(255, 215, 0, 0.4),
+        0 8px 40px rgba(41, 50, 113, 0.3) !important;
+    border-left-width: 4px !important;
 }
 
 /* Search icon */
@@ -1039,6 +1186,265 @@
     100% {
         background-position: 100% 0%;
         transform: translateY(0);
+    }
+}
+
+/* Van Gogh Style Animations */
+@keyframes vanGoghTitleGlow {
+    0% {
+        text-shadow:
+            0 0 8px rgba(255, 215, 0, 0.8),
+            0 0 16px rgba(255, 204, 0, 0.6);
+    }
+    25% {
+        text-shadow:
+            0 0 12px rgba(255, 204, 0, 0.9),
+            0 0 24px rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        text-shadow:
+            0 0 16px rgba(255, 215, 0, 1),
+            0 0 32px rgba(244, 157, 66, 0.8);
+    }
+    75% {
+        text-shadow:
+            0 0 12px rgba(244, 157, 66, 0.9),
+            0 0 24px rgba(255, 204, 0, 0.7);
+    }
+    100% {
+        text-shadow:
+            0 0 8px rgba(255, 215, 0, 0.8),
+            0 0 16px rgba(255, 204, 0, 0.6);
+    }
+}
+
+@keyframes vanGoghLabelGlow {
+    0% {
+        text-shadow:
+            0 0 10px rgba(255, 215, 0, 0.9),
+            0 0 20px rgba(255, 204, 0, 0.7),
+            0 0 30px rgba(255, 140, 0, 0.5);
+    }
+    20% {
+        text-shadow:
+            0 0 15px rgba(255, 204, 0, 1),
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 45px rgba(244, 157, 66, 0.6);
+    }
+    40% {
+        text-shadow:
+            0 0 20px rgba(255, 215, 0, 1.1),
+            0 0 40px rgba(255, 140, 0, 0.9),
+            0 0 60px rgba(244, 157, 66, 0.7);
+    }
+    60% {
+        text-shadow:
+            0 0 25px rgba(244, 157, 66, 1.2),
+            0 0 50px rgba(255, 204, 0, 1),
+            0 0 75px rgba(255, 140, 0, 0.8);
+    }
+    80% {
+        text-shadow:
+            0 0 18px rgba(255, 204, 0, 1),
+            0 0 36px rgba(255, 215, 0, 0.8),
+            0 0 54px rgba(244, 157, 66, 0.6);
+    }
+    100% {
+        text-shadow:
+            0 0 10px rgba(255, 215, 0, 0.9),
+            0 0 20px rgba(255, 204, 0, 0.7),
+            0 0 30px rgba(255, 140, 0, 0.5);
+    }
+}
+
+@keyframes vanGoghLabelFloat {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    20% {
+        transform: translateY(-1.5px) rotate(0.3deg);
+    }
+    40% {
+        transform: translateY(-2px) rotate(0.5deg);
+    }
+    60% {
+        transform: translateY(1.5px) rotate(-0.3deg);
+    }
+    80% {
+        transform: translateY(2px) rotate(-0.5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes vanGoghShimmer {
+    0% {
+        opacity: 0.7;
+        background: linear-gradient(45deg,
+            rgba(255, 215, 0, 0.08) 0%,
+            rgba(255, 204, 0, 0.12) 25%,
+            rgba(244, 157, 66, 0.1) 50%,
+            rgba(255, 140, 0, 0.08) 75%,
+            rgba(255, 215, 0, 0.06) 100%);
+    }
+    25% {
+        opacity: 0.85;
+        background: linear-gradient(45deg,
+            rgba(255, 215, 0, 0.12) 0%,
+            rgba(255, 204, 0, 0.18) 25%,
+            rgba(244, 157, 66, 0.15) 50%,
+            rgba(255, 140, 0, 0.12) 75%,
+            rgba(255, 215, 0, 0.1) 100%);
+    }
+    50% {
+        opacity: 1;
+        background: linear-gradient(45deg,
+            rgba(255, 215, 0, 0.15) 0%,
+            rgba(255, 204, 0, 0.22) 25%,
+            rgba(244, 157, 66, 0.18) 50%,
+            rgba(255, 140, 0, 0.15) 75%,
+            rgba(255, 215, 0, 0.13) 100%);
+    }
+    75% {
+        opacity: 0.85;
+        background: linear-gradient(45deg,
+            rgba(255, 215, 0, 0.12) 0%,
+            rgba(255, 204, 0, 0.18) 25%,
+            rgba(244, 157, 66, 0.15) 50%,
+            rgba(255, 140, 0, 0.12) 75%,
+            rgba(255, 215, 0, 0.1) 100%);
+    }
+    100% {
+        opacity: 0.7;
+        background: linear-gradient(45deg,
+            rgba(255, 215, 0, 0.08) 0%,
+            rgba(255, 204, 0, 0.12) 25%,
+            rgba(244, 157, 66, 0.1) 50%,
+            rgba(255, 140, 0, 0.08) 75%,
+            rgba(255, 215, 0, 0.06) 100%);
+    }
+}
+
+@keyframes vanGoghStarTwinkle {
+    0% {
+        transform: translateY(-50%) scale(1) rotate(0deg);
+        text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+    }
+    20% {
+        transform: translateY(-50%) scale(1.05) rotate(72deg);
+        text-shadow: 0 0 15px rgba(255, 204, 0, 0.95);
+    }
+    40% {
+        transform: translateY(-50%) scale(1.1) rotate(144deg);
+        text-shadow: 0 0 18px rgba(255, 215, 0, 1);
+    }
+    60% {
+        transform: translateY(-50%) scale(1.15) rotate(216deg);
+        text-shadow: 0 0 21px rgba(244, 157, 66, 1.05);
+    }
+    80% {
+        transform: translateY(-50%) scale(1.08) rotate(288deg);
+        text-shadow: 0 0 16px rgba(255, 204, 0, 0.98);
+    }
+    100% {
+        transform: translateY(-50%) scale(1) rotate(360deg);
+        text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+    }
+}
+
+@keyframes vanGoghTitlebarFlow {
+    0% {
+        background: linear-gradient(135deg,
+            rgba(22, 36, 71, 0.98) 0%,
+            rgba(41, 50, 113, 0.95) 15%,
+            rgba(30, 39, 89, 0.97) 30%,
+            rgba(22, 36, 71, 0.99) 45%,
+            rgba(16, 24, 47, 0.96) 60%,
+            rgba(41, 50, 113, 0.98) 75%,
+            rgba(30, 39, 89, 0.95) 90%,
+            rgba(22, 36, 71, 0.97) 100%);
+    }
+    25% {
+        background: linear-gradient(135deg,
+            rgba(30, 39, 89, 0.97) 0%,
+            rgba(22, 36, 71, 0.98) 15%,
+            rgba(41, 50, 113, 0.95) 30%,
+            rgba(30, 39, 89, 0.99) 45%,
+            rgba(22, 36, 71, 0.96) 60%,
+            rgba(16, 24, 47, 0.98) 75%,
+            rgba(41, 50, 113, 0.95) 90%,
+            rgba(30, 39, 89, 0.97) 100%);
+    }
+    50% {
+        background: linear-gradient(135deg,
+            rgba(41, 50, 113, 0.95) 0%,
+            rgba(30, 39, 89, 0.97) 15%,
+            rgba(16, 24, 47, 0.98) 30%,
+            rgba(41, 50, 113, 0.99) 45%,
+            rgba(30, 39, 89, 0.96) 60%,
+            rgba(22, 36, 71, 0.98) 75%,
+            rgba(16, 24, 47, 0.95) 90%,
+            rgba(41, 50, 113, 0.97) 100%);
+    }
+    75% {
+        background: linear-gradient(135deg,
+            rgba(16, 24, 47, 0.96) 0%,
+            rgba(41, 50, 113, 0.98) 15%,
+            rgba(22, 36, 71, 0.97) 30%,
+            rgba(16, 24, 47, 0.99) 45%,
+            rgba(41, 50, 113, 0.96) 60%,
+            rgba(30, 39, 89, 0.98) 75%,
+            rgba(22, 36, 71, 0.95) 90%,
+            rgba(16, 24, 47, 0.97) 100%);
+    }
+    100% {
+        background: linear-gradient(135deg,
+            rgba(22, 36, 71, 0.98) 0%,
+            rgba(41, 50, 113, 0.95) 15%,
+            rgba(30, 39, 89, 0.97) 30%,
+            rgba(22, 36, 71, 0.99) 45%,
+            rgba(16, 24, 47, 0.96) 60%,
+            rgba(41, 50, 113, 0.98) 75%,
+            rgba(30, 39, 89, 0.95) 90%,
+            rgba(22, 36, 71, 0.97) 100%);
+    }
+}
+
+@keyframes vanGoghStarfield {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+@keyframes vanGoghGoldenLine {
+    0% {
+        opacity: 0.6;
+        transform: scaleX(0.8);
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+    25% {
+        opacity: 0.8;
+        transform: scaleX(0.9);
+        box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
+        box-shadow: 0 0 16px rgba(255, 215, 0, 1);
+    }
+    75% {
+        opacity: 0.8;
+        transform: scaleX(0.9);
+        box-shadow: 0 0 12px rgba(244, 157, 66, 0.8);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scaleX(0.8);
+        box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
     }
 }
 
