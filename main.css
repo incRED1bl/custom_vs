@@ -187,3 +187,40 @@
         backdrop-filter: blur(8px);
     }
 }
+
+/* Terminal and Panel Borders - Neon Blue - Consistent Styling */
+.monaco-panel,
+.panel.integrated-terminal,
+.terminal-outer-container,
+.terminal-wrapper,
+.pane-body.integrated-terminal,
+.part.panel > .content,
+div[id="workbench.panel.terminal"] {
+    border: 1px solid #00ccff !important;
+    border-radius: 0px !important;
+    box-shadow: 0 0 5px #00ccff !important;
+}
+
+/* Top separator line for panel */
+.part.panel {
+    border-top: 1px solid #00ccff !important;
+    box-shadow: 0 1px 3px #00ccff !important;
+}
+
+/* Debug console border */
+.debug-console,
+.repl,
+.panel.repl,
+div[id="workbench.panel.repl"] {
+    border: 1px solid #00ccff !important;
+    border-radius: 0px !important;
+    box-shadow: 0 0 5px #00ccff !important;
+}
+
+/* Activity bar / Left sidebar border */
+.part.activitybar,
+.activitybar,
+.monaco-workbench .part.activitybar {
+    border-right: 1px solid #00ccff !important;
+    box-shadow: 1px 0 3px #00ccff !important;
+}
