@@ -124,8 +124,7 @@ div[id="workbench.panel.repl"] {
         0 0 15px rgba(255, 229, 92, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
-    font-family: 'Monospace Radon', monospace !important;
-    font-family: "Geist Mono" !important;
+    font-family: "Fira Code", "Geist Mono", monospace !important;
     font-size: 16px !important;
     margin-bottom: 14px !important;
     font-optical-sizing: auto !important;
