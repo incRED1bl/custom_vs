@@ -1,10 +1,10 @@
-/* Command Palette - Van Gogh Style */
-.quick-input-widget {
-    transform: translateY(-50%) !important;
+/* Command Palette - Van Gogh Style - Only when visible */
+.quick-input-widget:not([style*="display: none"]) {
     top: 65% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    position: absolute !important;
+    position: fixed !important;
+    z-index: 9999 !important;
     padding: 10px 10px 18px 10px !important;
     background: linear-gradient(135deg,
         rgba(41, 50, 113, 0.95) 0%,     /* Deep night blue from Starry Night */
@@ -72,6 +72,41 @@
     box-shadow:
         inset 0 0 15px rgba(255, 229, 92, 0.2),
         0 0 10px rgba(255, 229, 92, 0.3) !important;
+}
+
+/* Terminal and Panel Borders - Neon Blue - Non-layout affecting */
+.monaco-panel,
+.panel.integrated-terminal,
+.terminal-outer-container,
+.terminal-wrapper,
+.pane-body.integrated-terminal,
+.part.panel > .content,
+div[id="workbench.panel.terminal"] {
+    border: 1px solid #00ccff !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0 0 5px #00ccff !important;
+}
+
+/* Top separator line for panel */
+.part.panel {
+    border-top: 1px solid #00ccff !important;
+}
+
+/* Debug console border */
+.debug-console,
+.repl,
+.panel.repl,
+div[id="workbench.panel.repl"] {
+    border: 1px solid #00ccff !important;
+    border-radius: 0px !important;
+    box-shadow: inset 0 0 5px #00ccff !important;
+}
+
+/* Activity bar / Left sidebar border */
+.part.activitybar,
+.activitybar,
+.monaco-workbench .part.activitybar {
+    border-right: 1px solid #00ccff !important;
 }
 
 /* Command palette text input - Van Gogh Style */
@@ -188,39 +223,4 @@
     }
 }
 
-/* Terminal and Panel Borders - Neon Blue - Consistent Styling */
-.monaco-panel,
-.panel.integrated-terminal,
-.terminal-outer-container,
-.terminal-wrapper,
-.pane-body.integrated-terminal,
-.part.panel > .content,
-div[id="workbench.panel.terminal"] {
-    border: 1px solid #00ccff !important;
-    border-radius: 0px !important;
-    box-shadow: 0 0 5px #00ccff !important;
-}
-
-/* Top separator line for panel */
-.part.panel {
-    border-top: 1px solid #00ccff !important;
-    box-shadow: 0 1px 3px #00ccff !important;
-}
-
-/* Debug console border */
-.debug-console,
-.repl,
-.panel.repl,
-div[id="workbench.panel.repl"] {
-    border: 1px solid #00ccff !important;
-    border-radius: 0px !important;
-    box-shadow: 0 0 5px #00ccff !important;
-}
-
-/* Activity bar / Left sidebar border */
-.part.activitybar,
-.activitybar,
-.monaco-workbench .part.activitybar {
-    border-right: 1px solid #00ccff !important;
-    box-shadow: 1px 0 3px #00ccff !important;
-}
+/* Command palette text input - Van Gogh Style */
