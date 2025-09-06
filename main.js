@@ -75,33 +75,4 @@ document.addEventListener('DOMContentLoaded', function() {
             element.click();
         }
     }
-
-    // Pulsating Neon Glow for Active Line
-    function initNeonPulse() {
-        try {
-            const editor = document.querySelector('.monaco-editor');
-            if (!editor) {
-                console.log('Editor not found for neon pulse');
-                return;
-            }
-            const style = document.createElement('style');
-            style.id = 'neon-pulse-style';
-            style.textContent = `
-                .monaco-editor .current-line {
-                    position: relative !important;
-                    box-shadow: 0 0 10px #00ffcc !important;
-                    animation: neonPulse 1.5s infinite !important;
-                }
-                @keyframes neonPulse {
-                    0% { box-shadow: 0 0 5px #00ffcc !important; }
-                    50% { box-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc !important; }
-                    100% { box-shadow: 0 0 5px #00ffcc !important; }
-                }
-            `;
-            document.head.appendChild(style);
-            console.log('Neon pulse style injected');
-        } catch (e) {
-            console.error('Error injecting neon pulse style:', e);
-        }
-    }
-})
+});
