@@ -223,4 +223,59 @@ div[id="workbench.panel.repl"] {
     }
 }
 
+/* Line Numbers - Neon Blue Smooth Style */
+.monaco-editor .margin-view-overlays .line-numbers {
+    color: #00ccff !important;
+    font-family: 'Geist Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    text-shadow: 
+        0 0 3px #00ccff,
+        0 0 6px rgba(0, 204, 255, 0.8),
+        0 0 9px rgba(0, 204, 255, 0.6) !important;
+    transition: all 0.2s ease-in-out !important;
+    opacity: 0.9 !important;
+}
+
+.monaco-editor .margin-view-overlays .line-numbers:hover {
+    color: #33ddff !important;
+    text-shadow: 
+        0 0 4px #33ddff,
+        0 0 8px rgba(51, 221, 255, 0.9),
+        0 0 12px rgba(51, 221, 255, 0.7),
+        0 0 16px rgba(0, 204, 255, 0.4) !important;
+    opacity: 1 !important;
+}
+
+/* Active line number (current line) */
+.monaco-editor .margin-view-overlays .current-line ~ .line-numbers,
+.monaco-editor .margin-view-overlays .line-numbers.active-line-number {
+    color: #66eeff !important;
+    font-weight: 500 !important;
+    text-shadow: 
+        0 0 5px #66eeff,
+        0 0 10px rgba(102, 238, 255, 1),
+        0 0 15px rgba(102, 238, 255, 0.8),
+        0 0 20px rgba(0, 204, 255, 0.5) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Line number margin background */
+.monaco-editor .margin-view-overlays {
+    background: linear-gradient(90deg, 
+        rgba(0, 20, 40, 0.3) 0%,
+        rgba(0, 40, 60, 0.2) 50%,
+        rgba(0, 60, 80, 0.1) 100%) !important;
+    border-right: 1px solid rgba(0, 204, 255, 0.3) !important;
+}
+
+/* Selection line numbers glow */
+.monaco-editor .selected-text .margin-view-overlays .line-numbers {
+    color: #99f3ff !important;
+    text-shadow: 
+        0 0 6px #99f3ff,
+        0 0 12px rgba(153, 243, 255, 0.9),
+        0 0 18px rgba(153, 243, 255, 0.6) !important;
+}
+
 /* Command palette text input - Van Gogh Style */
