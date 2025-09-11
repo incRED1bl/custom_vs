@@ -23,6 +23,12 @@
     z-index: 9999 !important;
 }
 
+
+
+
+
+
+
 /* Remove background for lists */
 .monaco-list-rows {
     background: transparent !important;
@@ -225,16 +231,20 @@ div[id="workbench.panel.repl"] {
 
 /* Line Numbers - Neon Blue Smooth Style */
 .monaco-editor .margin-view-overlays .line-numbers {
-    color: #00ccff !important;
-    font-family: 'Geist Mono', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
-    font-weight: 400 !important;
-    font-size: 12px !important;
-    text-shadow: 
-        0 0 3px #00ccff,
-        0 0 6px rgba(0, 204, 255, 0.8),
-        0 0 9px rgba(0, 204, 255, 0.6) !important;
-    transition: all 0.2s ease-in-out !important;
-    opacity: 0.9 !important;
+    /* Van Gogh Starry Night Masterpiece Line Numbers */
+    color: #ffe55c !important; /* Star yellow */
+    font-family: 'Geist Mono', 'Fira Code', 'Monaco', 'Menlo', monospace !important;
+    font-weight: 600 !important;
+    /* Only color and shadow customization, all spacing/layout is default */
+    color: #ffe55c !important; /* Star yellow */
+    font-family: 'Geist Mono', 'Fira Code', 'Monaco', 'Menlo', monospace !important;
+    font-weight: 600 !important;
+    text-shadow:
+        0 1px 2px rgba(41,50,113,0.18),
+        0 0 2px #ffe55c,
+        0 0 6px rgba(244,157,66,0.13);
+    transition: color 0.2s cubic-bezier(.4,2,.6,1), text-shadow 0.2s cubic-bezier(.4,2,.6,1) !important;
+    opacity: 1 !important;
 }
 
 .monaco-editor .margin-view-overlays .line-numbers:hover {
