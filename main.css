@@ -35,7 +35,7 @@
 
 /* Thin Yellow Panel Separators - VS Code Style */
 .split-view-view:not(:first-child) {
-    border-left: 1px solid rgba(255, 229, 92, 0.6) !important;
+    border-left: none !important;
 }
 
 .split-view-view:not(:last-child) {
@@ -53,7 +53,7 @@
 }
 
 .part.auxiliarybar {
-    border-left: 1px solid rgba(255, 229, 92, 0.6) !important;
+    border-left: none !important;
 }
 
 /* Activity bar separator */
