@@ -469,4 +469,46 @@ button[aria-label*="Commit"],
     -webkit-backdrop-filter: none !important;
 }
 
+/* Observe Panel - Bright Blue Text Highlighting */
+/* Target the actual VS Code information panels */
+.monaco-workbench .part.panel .panel-header,
+.monaco-workbench .part.panel .panel-body,
+.monaco-workbench .notifications-center,
+.notifications-toasts,
+.hover-contents,
+.parameter-hints,
+.suggest-details,
+.monaco-hover,
+.monaco-hover .hover-row,
+.monaco-list-row .codicon,
+.monaco-list-row .label-name,
+.monaco-list-row .label-description,
+.quick-input-widget .quick-input-header,
+.quick-input-widget .quick-input-description,
+.breadcrumbs-control,
+.tabs-breadcrumbs .breadcrumb-item,
+.editor-group-header .tabs-container .tab .tab-label,
+.statusbar-item .status-bar-item-label {
+    color: rgba(0, 204, 255, 0.9) !important;
+}
+
+/* File path and breadcrumb highlighting */
+.monaco-breadcrumbs,
+.breadcrumbs-control .monaco-breadcrumb-item,
+.breadcrumbs-control .monaco-icon-label,
+.tabs-breadcrumbs,
+.editor-group-header .title .label-name {
+    color: rgba(51, 221, 255, 0.95) !important;
+    text-shadow: 0 0 5px rgba(51, 221, 255, 0.4) !important;
+}
+
+/* Status and information text */
+.monaco-list-row .monaco-icon-label .label-name,
+.monaco-list-row .monaco-icon-label .label-description,
+.quick-input-list .monaco-list-row .label,
+.notifications-toasts .notification-toast .notification-toast-message {
+    color: rgba(102, 238, 255, 0.85) !important;
+    text-shadow: 0 0 4px rgba(102, 238, 255, 0.3) !important;
+}
+
 /* Command palette text input - Van Gogh Style */
