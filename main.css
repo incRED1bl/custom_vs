@@ -7,13 +7,13 @@
     z-index: 9999 !important;
     padding: 10px 10px 18px 10px !important;
     background: linear-gradient(135deg,
-        rgba(41, 50, 113, 0.95) 0%,     /* Deep night blue from Starry Night */
-        rgba(70, 80, 140, 0.9) 25%,     /* Mid night blue */
-        rgba(255, 229, 92, 0.2) 50%,    /* Van Gogh's bright yellow stars */
-        rgba(244, 157, 66, 0.3) 75%,    /* Warm orange glow */
-        rgba(22, 36, 71, 0.95) 100%     /* Darker blue base */
+        rgba(41, 50, 113, 0.98) 0%,     /* Deep night blue from Starry Night */
+        rgba(70, 80, 140, 0.95) 25%,    /* Mid night blue */
+        rgba(255, 229, 92, 0.25) 50%,   /* Van Gogh's bright yellow stars */
+        rgba(244, 157, 66, 0.35) 75%,   /* Warm orange glow */
+        rgba(22, 36, 71, 0.98) 100%     /* Darker blue base */
     ) !important;
-    backdrop-filter: blur(24px) !important;
+    backdrop-filter: blur(16px) !important;
     border-radius: 8px !important;
     border: 2px solid rgba(255, 229, 92, 0.6) !important;
     box-shadow:
@@ -131,14 +131,15 @@
 .pane-body.integrated-terminal,
 .part.panel > .content,
 div[id="workbench.panel.terminal"] {
-    border: 1px solid #00ccff !important;
+    border: 0.5px solid #00ccff !important;
+    border-left: none !important;
     border-radius: 0px !important;
-    box-shadow: inset 0 0 5px #00ccff !important;
+    box-shadow: inset 0 0 3px #00ccff !important;
 }
 
 /* Top separator line for panel */
 .part.panel {
-    border-top: 1px solid #00ccff !important;
+    border-top: 0.5px solid #00ccff !important;
 }
 
 /* Debug console border */
@@ -146,16 +147,16 @@ div[id="workbench.panel.terminal"] {
 .repl,
 .panel.repl,
 div[id="workbench.panel.repl"] {
-    border: 1px solid #00ccff !important;
+    border: 0.5px solid #00ccff !important;
     border-radius: 0px !important;
-    box-shadow: inset 0 0 5px #00ccff !important;
+    box-shadow: inset 0 0 3px #00ccff !important;
 }
 
 /* Activity bar / Left sidebar border */
 .part.activitybar,
 .activitybar,
 .monaco-workbench .part.activitybar {
-    border-right: 1px solid #00ccff !important;
+    border-right: 0.5px solid #00ccff !important;
 }
 
 /* Command palette text input - Van Gogh Style */
@@ -328,6 +329,144 @@ div[id="workbench.panel.repl"] {
         0 0 6px #99f3ff,
         0 0 12px rgba(153, 243, 255, 0.9),
         0 0 18px rgba(153, 243, 255, 0.6) !important;
+}
+
+/* Improved Text Contrast and Readability */
+.monaco-editor,
+.monaco-editor .view-lines,
+.monaco-editor .view-line,
+.monaco-editor .mtk1,
+.chat-view,
+.chat-request,
+.chat-response,
+.markdown-contents,
+.rendered-markdown,
+.monaco-list-row {
+    color: rgba(255, 255, 255, 1) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Chat and markdown specific improvements */
+.chat-response .markdown-contents,
+.chat-request .markdown-contents,
+.rendered-markdown p,
+.rendered-markdown li,
+.rendered-markdown span {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Code blocks and inline code */
+.monaco-editor code,
+.rendered-markdown code,
+.chat-response code,
+code {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    color: rgba(255, 229, 92, 1) !important;
+    border: 1px solid rgba(255, 229, 92, 0.3) !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    text-shadow: 0 0 5px rgba(255, 229, 92, 0.5) !important;
+}
+
+/* Headers for better hierarchy */
+.rendered-markdown h1,
+.rendered-markdown h2,
+.rendered-markdown h3,
+.chat-response h1,
+.chat-response h2,
+.chat-response h3 {
+    color: rgba(255, 229, 92, 1) !important;
+    text-shadow: 0 0 8px rgba(255, 229, 92, 0.6) !important;
+    font-weight: 700 !important;
+}
+
+/* Links */
+.rendered-markdown a,
+.chat-response a {
+    color: rgba(102, 238, 255, 1) !important;
+    text-shadow: 0 0 5px rgba(102, 238, 255, 0.5) !important;
+}
+
+/* Button Clarity - Remove Blur Effects */
+button,
+.monaco-button,
+.monaco-text-button,
+.commit-button,
+.action-button,
+.scm-commit-button,
+input[type="button"],
+input[type="submit"],
+.button,
+.btn,
+[role="button"],
+.action-item,
+.toolbar-item,
+.menu-item,
+.dropdown-button {
+    backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-shadow: none !important;
+}
+
+/* Specific commit button styling */
+.scm-commit-button,
+.commit-button,
+button[title*="Commit"],
+button[aria-label*="Commit"],
+.monaco-button.prominent {
+    backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(255, 193, 7, 0.9) !important;
+    border: 1px solid rgba(255, 193, 7, 1) !important;
+    color: rgba(0, 0, 0, 1) !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* Status Bar and Git UI Clarity - Remove Blur Effects */
+.part.statusbar,
+.statusbar,
+.status-bar,
+.statusbar-item,
+.status-bar-item,
+.git-branch,
+.scm-view,
+.git-status,
+.git-indicator,
+.branch-indicator,
+.monaco-list-row,
+.monaco-tree-row,
+.explorer-item,
+.git-resource,
+.git-change,
+.monaco-icon-label,
+.icon-label,
+.label-name,
+.label-description,
+.status-item,
+.activity-item,
+.sidebar-item,
+.panel-item {
+    backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-shadow: none !important;
+}
+
+/* Git branch and status specific */
+.git-branch-status,
+.branch-label,
+.git-status-label,
+.scm-resource,
+.monaco-list .monaco-list-row .monaco-icon-label,
+.sidebar .monaco-list-row {
+    backdrop-filter: none !important;
+    filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 /* Command palette text input - Van Gogh Style */
