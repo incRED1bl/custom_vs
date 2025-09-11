@@ -71,6 +71,22 @@
     border-right: 1px solid rgba(255, 229, 92, 0.3) !important;
 }
 
+/* Chat and auxiliary panel separators */
+.part.auxiliarybar,
+.chat-view,
+.auxiliary-bar,
+.auxiliary-panel,
+.workbench-parts .part.auxiliarybar {
+    border-left: 1px solid rgba(255, 229, 92, 0.6) !important;
+}
+
+/* Chat panel specific separators */
+.chat-view-container,
+.auxiliary-bar .split-view-view,
+.workbench-parts .auxiliary-bar .split-view-view {
+    border-left: 1px solid rgba(255, 229, 92, 0.6) !important;
+}
+
 /* Remove background for lists */
 .monaco-list-rows {
     background: transparent !important;
